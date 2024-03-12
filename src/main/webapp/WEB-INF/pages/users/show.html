@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:text="${user.id}">
+                <p th:text="${user.getId()}">VALUE</p>
+            </td>
+            <td th:text="${user.name}">
+                <p th:text="${user.getName()}">VALUE</p>
+            </td>
+            <td th:text="${user.age}">
+                <p th:text="${user.getAge()}">VALUE</p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <hr>
+
+    <form th:method="GET" th:action="@{'/' + ${user.id} + '/edit'}">
+        <input type="submit" value="Update user"/>
+    </form>
+
+    <br>
+
+    <form th:method="DELETE" th:action="'/' + ${user.id}">
+        <input type="submit" value="Delete user"/>
+    </form>
+
+</body>
+</html>

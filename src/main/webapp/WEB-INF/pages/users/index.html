@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All users</title>
+</head>
+<body>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>User</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.id}"></td>
+
+        <td>
+            <a th:href="@{'/' + ${user.getId()}}">
+                <span th:text="${user.name}"></span> <span th:text="${user.age}"></span>
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<br>
+<hr>
+
+<button type="submit"><a href="/new">Create new user</a></button>
+
+</body>
+</html>
